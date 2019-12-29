@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 	<title>bla bla </title>
+	<style type="text/css">
+		.wrapper{
+			width: 80%;
+			opacity: 0.5;
+			height: 300px;
+			font-size: 100px;
+			background-color: green;
+			border:4px solid lightgray;
+			margin: auto;
+			margin-top: 20px;
+			text-align: center;
+			padding-top: 300px;
+			font-weight: 900px;
+		}
+		.pon-pon-pon{
+			width: 20%;
+			background-color: green;
+			color: black;
+			height: 100px;
+			margin-left: 10px;
+
+		}
+		#first{
+			border:5px solid lightgray;
+			font-size: 30px;
+			padding-top: 5%;
+			text-align: center;
+			float: right;
+			background-color:green; 
+		}
+		#second{
+			border:5px solid lightgray;
+			font-size: 30px;
+			padding-top: 5%;
+			text-align: center;
+			float: right;
+			background-color: blue;
+		}
+		#third{
+			border:5px solid lightgray;
+			font-size: 30px;
+			padding-top: 5%;
+			text-align: center;
+			float: right;
+			background-color: red;
+		}
+		#put-them-centre{
+			margin-right: 400px;
+	
+		}
+	</style>
+</head>
+<body>
+	<div class="rapper"> 
+		<div id="put-them-centre">
+ 		<div onclick="guess()" class="pon-pon-pon" id="first">
+			SIZORRS
+		</div>
+		<div onclick="guess()" class="pon-pon-pon" id="second">
+			PAPER
+		</div>
+		<div onclick="guess()" class="pon-pon-pon" id="third">
+			ROCK 
+		</div>
+	</div>
+		
+	</div>
+  <script type="text/javascript">
+ 	 let guesses = ['rock','paper','sizors'];
+  	 let score=0;
+  let me = prompt('do you want to play');
+  while(me==='yes'){
+  if (me==='yes'){
+  	let user = prompt(`choose  your current score is ${score}`);
+
+  	let randomAnswer = guesses[Math.round(Math.random()*2)];
+	if (randomAnswer==='rock' && user === 'paper') {
+		alert('have coverd you');
+
+		score--;
+	}
+	else if (randomAnswer==='paper' && user === 'rock') {
+		alert('you covered me');
+
+		score++;
+	}
+	else if (randomAnswer==='paper' && user === 'sizors') {
+		alert('dam you cut me');
+
+		score++;
+	
+	}
+	else if (randomAnswer==='sizors' && user === 'paper') {
+		alert('i cut you good for you');
+
+		score--;
+	}
+	else if (randomAnswer==='rock' && user === 'sizors') {
+		alert('i bang you bla bla');
+
+		score--;
+	}  	
+	else if (randomAnswer==='sizors' && user === 'rock') {
+		alert('you win again fuck');
+		score++;
+	}
+	else{
+		alert('oga abeg choose the right thing')
+	}  	
+  }
+  else{
+  	alert('sorry for disturbing')
+  }
+  }
+ </script>
+ </body>
+</html>

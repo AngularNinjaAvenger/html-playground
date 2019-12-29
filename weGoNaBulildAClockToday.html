@@ -1,0 +1,118 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	 
+ 	<title></title>
+ 	<style type="text/css">
+ 		#blue-side{
+ 			background-color:lightgray;
+ 			color: black;
+ 			border: 2px solid lightgray;
+ 			border-bottom-left-radius: 8px;
+ 			border-bottom-right-radius: 8px;
+ 			height: 40px;
+ 			margin: auto;
+ 		}
+ 		#add-note{
+ 			outline: none;
+ 			border:2px solid white;
+ 			margin-left: 4%;
+ 			margin-top: 4px;
+ 			width: 70%;
+ 			height: 25px;
+ 			background-color: white;
+ 			border-radius: 10px;
+ 			font-size: 18px;
+
+ 		}
+ 		#add-button{
+ 			width: 50px;
+ 			height: 50px;
+ 			background-color: white;
+ 			border:2px solid white;
+ 			border-radius: 20px;
+ 			position: absolute;
+ 			top: 1px;
+ 			left: 360px;
+
+ 		}
+ 		#button-button{
+ 			font-size: 55px;
+ 			position: absolute;
+ 			bottom: 0px;
+ 			top: -7px;
+ 			left: 8px;
+ 			color: black;
+ 		}
+ 		.list-item{
+ 			list-style-type: none;
+ 			width: 80%;
+			height: 40px;
+			background-color: lightgray;
+ 			margin-top: 20px;
+ 			padding-top: 11px;
+ 			padding-bottom: -12px;
+ 			padding-left: 40px;
+ 			border-radius: 10px;
+ 		}
+ 		.float-icon{
+ 			float: right;
+ 			padding-right: 40px
+ 			;
+ 			font-size: 40px;
+ 			padding-top: -20px;
+ 		}
+ 		.text-item{
+ 			float: left;
+ 		}
+ 	</style>
+ </head>
+ <body>
+ <div id="blue-side">
+ 	<input placeholder="add a note" id="add-note" type="text" name="">
+ 	<div id="add-button">
+ 		<span class="float-icon" id="button-button">&plus;</span>
+ 	</div>
+ </div>
+ <ul id="uList">
+ <li class="list-item">
+ 	<span class="text-item">list items</span>
+ <span class="float-icon">&times;</span>
+ </li>
+ <li class="list-item">
+ 	<span class="text-item">list items</span>
+ <span class="float-icon">&times;</span>
+ </li>
+ <li class="list-item">
+ 	<span class="text-item">list items</span>
+ <span class="float-icon">&times;</span>
+ </li>
+ <li class="list-item">
+ 	<span class="text-item">list items</span>
+ <span class="float-icon">&times;</span>
+ </li>
+ </ul>
+ <script type="text/javascript">
+ 	let input  = document.getElementById('add-note');
+ 	let addButton = document.getElementById('add-button');
+ 	addButton.addEventListener('click',function(){
+ 		if (input.value !== ' ') {
+				let ul = document.getElementById('uList');
+			let li  = document.createElement('li') 
+			li.innerHTMl=input.value;
+			li.className.add('list-item');
+			let span = document.createElement('span');
+			let fspan = document.createElement('span');
+			fspan.className.add('float-icon');
+			li.appendChild('span');
+			li.appendChild('fspan');
+			span.className('text-item');
+			ul.appendChild(li);
+
+ 			}
+ 		else if(input.value === ' ') {
+ 			alert('add a text to the input field')}
+ 	})
+ </script>
+ </body>
+ </html>
